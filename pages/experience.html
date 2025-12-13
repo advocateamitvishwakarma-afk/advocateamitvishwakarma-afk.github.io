@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience & Cases - Advocate Amit Vishwakarma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Experience Page Specific Styles */
+        .experience-hero {
+            background: linear-gradient(rgba(10, 31, 68, 0.9), rgba(10, 31, 68, 0.9)), url('../img/courtroom.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .experience-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .experience-hero p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--gold);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            margin-bottom: 50px;
+        }
+        
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: white;
+            border: 4px solid var(--gold);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+        
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+        
+        .right::after {
+            left: -16px;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-content h2 {
+            color: var(--navy-blue);
+            margin-bottom: 10px;
+        }
+        
+        .timeline-content .date {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .case-studies {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .case-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .case-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .case-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .case-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .case-card:hover .case-image img {
+            transform: scale(1.05);
+        }
+        
+        .case-content {
+            padding: 25px;
+        }
+        
+        .case-content h3 {
+            color: var(--navy-blue);
+            margin-bottom: 10px;
+        }
+        
+        .case-content .outcome {
+            color: var(--gold);
+            font-weight: 600;
+            margin: 15px 0;
+            display: block;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-container::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+            
+            .left::after, .right::after {
+                left: 15px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+            
+            .experience-hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Adv. Amit Vishwakarma</h1>
+                <p>Bombay High Court</p>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="practice-areas.html">Practice Areas</a></li>
+                    <li class="active"><a href="experience.html">Experience</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="experience-hero">
+        <div class="container">
+            <h1>Professional Experience & Notable Cases</h1>
+            <p>With years of dedicated practice in the legal field, I have successfully represented clients in various complex legal matters.</p>
+        </div>
+    </section>
+
+    <!-- Professional Journey -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Professional Journey</h2>
+                <div class="divider"></div>
+                <p>A timeline of my legal career and professional milestones</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-container left">
+                    <div class="timeline-content">
+                        <h2>Senior Advocate</h2>
+                        <span class="date">2020 - Present</span>
+                        <p>Independent Practice, [City]</p>
+                        <ul>
+                            <li>Established successful independent practice focusing on [specific areas]</li>
+                            <li>Represented clients in high-profile cases in [specific courts]</li>
+                            <li>Mentored junior associates and interns</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-container right">
+                    <div class="timeline-content">
+                        <h2>Associate Attorney</h2>
+                        <span class="date">2015 - 2020</span>
+                        <p>[Law Firm Name], [City]</p>
+                        <ul>
+                            <li>Specialized in [specific practice areas]</li>
+                            <li>Handled an average of [X] cases per year with [success rate]% success rate</li>
+                            <li>Developed expertise in [specific legal procedures]</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-container left">
+                    <div class="timeline-content">
+                        <h2>Junior Associate</h2>
+                        <span class="date">2012 - 2015</span>
+                        <p>[Law Firm Name], [City]</p>
+                        <ul>
+                            <li>Assisted senior attorneys with case preparation and research</li>
+                            <li>Drafted legal documents and pleadings</li>
+                            <li>Attended court proceedings and client meetings</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-container right">
+                    <div class="timeline-content">
+                        <h2>Law Clerk</h2>
+                        <span class="date">2010 - 2012</span>
+                        <p>[Court Name], [City]</p>
+                        <ul>
+                            <li>Conducted legal research and drafted opinions</li>
+                            <li>Assisted judges with case management</li>
+                            <li>Gained valuable courtroom experience</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-container left">
+                    <div class="timeline-content">
+                        <h2>Education</h2>
+                        <span class="date">2007 - 2010</span>
+                        <p>LL.B. - [Law School Name]</p>
+                        <ul>
+                            <li>Specialized in [specific areas of law]</li>
+                            <li>Participated in moot court competitions</li>
+                            <li>Member of [legal associations]</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="case-studies">
+        <div class="container">
+            <div class="section-header">
+                <h2>Case Studies</h2>
+                <div class="divider"></div>
+                <p>Selected cases that demonstrate my legal expertise and successful outcomes</p>
+            </div>
+            
+            <div class="case-grid">
+                <div class="case-card">
+                    <div class="case-image">
+                        <img src="../img/case1.jpg" alt="Case Study 1">
+                    </div>
+                    <div class="case-content">
+                        <h3>Landmark Property Dispute</h3>
+                        <p>Successfully represented a client in a high-stakes property dispute involving complex ownership claims and historical land records.</p>
+                        <span class="outcome">Outcome: Favorable settlement for the client</span>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="case-card">
+                    <div class="case-image">
+                        <img src="../img/case2.jpg" alt="Case Study 2">
+                    </div>
+                    <div class="case-content">
+                        <h3>Corporate Contract Dispute</h3>
+                        <p>Represented a mid-sized corporation in a breach of contract case, successfully arguing for the enforcement of contractual obligations.</p>
+                        <span class="outcome">Outcome: Ruling in favor of client with damages awarded</span>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="case-card">
+                    <div class="case-image">
+                        <img src="../img/case3.jpg" alt="Case Study 3">
+                    </div>
+                    <div class="case-content">
+                        <h3>Family Law Matter</h3>
+                        <p>Successfully negotiated a favorable custody arrangement while protecting the client's parental rights and the best interests of the children involved.</p>
+                        <span class="outcome">Outcome: Amicable resolution with client's objectives met</span>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="disclaimer" style="margin-top: 50px; padding: 20px; background: #f8f9fa; border-left: 4px solid var(--gold);">
+                <h4>Disclaimer</h4>
+                <p>The case results and testimonials on this website are not a guarantee, warranty, or prediction of the outcome of any other legal matter. Each case is unique and must be evaluated on its own merits. Prior results do not guarantee a similar outcome in future cases.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to discuss your legal matter?</h2>
+                <p>Contact me today for a confidential consultation to discuss how I can assist with your legal needs.</p>
+                <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Adv. Amit Vishwakarma</h3>
+                    <p>Providing expert legal services with integrity and dedication to clients across various practice areas.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="practice-areas.html">Practice Areas</a></li>
+                        <li><a href="experience.html">Experience</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> A-303 Antariksh CHS LTD Kanakia Road opp. Kanakia Police Station,Beverly Park, Mira-road (East) Mira-Bhayandar, Maharashtra 401107</p>
+                    <p><i class="fas fa-phone"></i> 9326414897</p>
+                    <p><i class="fas fa-envelope"></i> advocateamitvishwakarma@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Advocate Amit Vishwakarma. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="disclaimer.html">Disclaimer</a> | 
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

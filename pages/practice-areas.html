@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Areas - Advocate Amit Vishwakarma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Additional styles specific to practice areas page */
+        .practice-area-hero {
+            background: linear-gradient(rgba(10, 31, 68, 0.9), rgba(10, 31, 68, 0.9)), url('../img/Court-order.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .practice-area-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .practice-area-hero p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .practice-areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .practice-area-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .practice-area-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .practice-area-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .practice-area-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .practice-area-card:hover .practice-area-image img {
+            transform: scale(1.05);
+        }
+        
+        .practice-area-content {
+            padding: 30px;
+        }
+        
+        .practice-area-content h3 {
+            color: var(--navy-blue);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .practice-area-content p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        
+        .read-more {
+            display: inline-block;
+            color: var(--gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            position: relative;
+            padding-right: 25px;
+        }
+        
+        .read-more::after {
+            content: '→';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+        }
+        
+        .read-more:hover {
+            color: var(--navy-blue);
+        }
+        
+        .read-more:hover::after {
+            right: -5px;
+        }
+        
+        .practice-area-detail {
+            margin-bottom: 50px;
+        }
+        
+        .practice-area-detail h2 {
+            color: var(--navy-blue);
+            margin-bottom: 20px;
+        }
+        
+        .practice-area-detail p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .practice-area-detail ul {
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
+        
+        .practice-area-detail ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .practice-area-detail ul li::before {
+            content: '✓';
+            color: var(--gold);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .practice-areas-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .practice-area-hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Adv. Amit Vishwakarma</h1>
+                <p>Bombay High Court</p>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="active"><a href="practice-areas.html">Practice Areas</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="practice-area-hero">
+        <div class="container">
+            <h1>Practice Areas</h1>
+            <p>Comprehensive legal services tailored to meet your specific needs with expertise and dedication.</p>
+        </div>
+    </section>
+
+    <!-- Practice Areas Grid -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="practice-areas-grid">
+                <!-- Criminal Law -->
+                <div class="practice-area-card">
+                    <div class="practice-area-image">
+                        <img src="../img/Criminal-Law.jpg" alt="Criminal Law">
+                    </div>
+                    <div class="practice-area-content">
+                        <h3>Criminal Law</h3>
+                        <p>Expert defense representation for all criminal matters, from minor offenses to serious felonies, ensuring your rights are protected throughout the legal process.</p>
+                        <a href="#criminal-law" class="read-more">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Family Law -->
+                <div class="practice-area-card">
+                    <div class="practice-area-image">
+                        <img src="../img/Family-law.jpg" alt="Family Law">
+                    </div>
+                    <div class="practice-area-content">
+                        <h3>Family Law</h3>
+                        <p>Compassionate guidance through complex family matters including divorce, child custody, adoption, and domestic violence cases.</p>
+                        <a href="#family-law" class="read-more">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Property Law -->
+                <div class="practice-area-card">
+                    <div class="practice-area-image">
+                        <img src="../img/Property-law.jpg" alt="Property Law">
+                    </div>
+                    <div class="practice-area-content">
+                        <h3>Property Law</h3>
+                        <p>Comprehensive legal services for property disputes, real estate transactions, landlord-tenant issues, and property development matters.</p>
+                        <a href="#property-law" class="read-more">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Corporate Law -->
+                <div class="practice-area-card">
+                    <div class="practice-area-image">
+                        <img src="../img/corporate-law.jpg" alt="Corporate Law">
+                    </div>
+                    <div class="practice-area-content">
+                        <h3>Corporate Law</h3>
+                        <p>Strategic legal counsel for businesses, including company formation, contracts, compliance, mergers & acquisitions, and corporate governance.</p>
+                        <a href="#corporate-law" class="read-more">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Intellectual Property -->
+                <div class="practice-area-card">
+                    <div class="practice-area-image">
+                        <img src="../img/Intellectual-Property-Rights-in-India-1280x720-1.jpg" alt="Intellectual Property">
+                    </div>
+                    <div class="practice-area-content">
+                        <h3>Intellectual Property</h3>
+                        <p>Protection and enforcement of intellectual property rights including trademarks, copyrights, patents, and trade secrets.</p>
+                        <a href="#intellectual-property" class="read-more">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Civil Litigation -->
+                <div class="practice-area-card">
+                    <div class="practice-area-image">
+                        <img src="../img/CivilLitigation.jpg" alt="Civil Litigation">
+                    </div>
+                    <div class="practice-area-content">
+                        <h3>Civil Litigation</h3>
+                        <p>Aggressive representation in civil disputes, contract disagreements, personal injury claims, and other non-criminal legal matters.</p>
+                        <a href="#civil-litigation" class="read-more">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Notary Services -->
+                <div class="practice-area-card">
+                    <div class="practice-area-image">
+                        <img src="../img/notary-public.jpg" alt="Notary Services">
+                    </div>
+                    <div class="practice-area-content">
+                        <h3>Notary Services</h3>
+                        <p>Official document notarization and certification services with full legal validity for all your personal and business needs.</p>
+                        <a href="#notary-services" class="read-more">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Affidavit Services -->
+                <div class="practice-area-card">
+                    <div class="practice-area-image">
+                        <img src="../img/affidavit.png" alt="Affidavit Services">
+                    </div>
+                    <div class="practice-area-content">
+                        <h3>Affidavit Services</h3>
+                        <p>Professional drafting, preparation, and attestation of affidavits for various legal, personal, and official purposes.</p>
+                        <a href="#affidavit-services" class="read-more">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Attestation -->
+                <div class="practice-area-card">
+                    <div class="practice-area-image">
+                        <img src="../img/attestation.jpg" alt="Attestation">
+                    </div>
+                    <div class="practice-area-content">
+                        <h3>Attestation</h3>
+                        <p>Comprehensive document verification and attestation services for educational, personal, and commercial documents.</p>
+                        <a href="#attestation" class="read-more">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Area Details -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <!-- Property Law Detail -->
+            <div id="property-law" class="practice-area-detail">
+                <h2>Property Law Services</h2>
+                <p class="lead">Navigating property transactions and disputes requires expert legal guidance. I provide comprehensive property law services to protect your real estate interests, whether you're buying, selling, or resolving property disputes.</p>
+                
+                <div class="expertise-section">
+                    <h3>Property Law Expertise</h3>
+                    <div class="expertise-grid">
+                        <div class="expertise-item">
+                            <i class="fas fa-home"></i>
+                            <h4>Real Estate Transactions</h4>
+                            <p>Professional handling of property purchases, sales, and transfers with thorough due diligence and documentation.</p>
+                        </div>
+                        <div class="expertise-item">
+                            <i class="fas fa-gavel"></i>
+                            <h4>Property Disputes</h4>
+                            <p>Effective resolution of boundary disputes, title issues, and property rights conflicts through negotiation or litigation.</p>
+                        </div>
+                        <div class="expertise-item">
+                            <i class="fas fa-file-contract"></i>
+                            <h4>Lease Agreements</h4>
+                            <p>Drafting and reviewing lease agreements to protect both landlords' and tenants' rights and interests.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cta-box">
+                    <h3>Need Help With a Property Matter?</h3>
+                    <p>Whether you're buying your first home or involved in a complex property dispute, I'm here to provide expert legal guidance.</p>
+                    <a href="../contact.html" class="btn">Schedule a Consultation</a>
+                </div>
+            </div>
+            
+            <!-- Corporate Law Detail -->
+            <div id="corporate-law" class="practice-area-detail">
+                <h2>Corporate Legal Services</h2>
+                <p class="lead">In today's complex business environment, having a trusted legal advisor is essential. I provide strategic corporate legal services tailored to help your business grow while ensuring compliance and protecting your interests.</p>
+                
+                <div class="expertise-section">
+                    <h3>Corporate Law Expertise</h3>
+                    <div class="expertise-grid">
+                        <div class="expertise-item">
+                            <i class="fas fa-building"></i>
+                            <h4>Business Formation</h4>
+                            <p>Guidance on choosing the right business structure and handling all legal aspects of company formation.</p>
+                        </div>
+                        <div class="expertise-item">
+                            <i class="fas fa-handshake"></i>
+                            <h4>Contracts & Agreements</h4>
+                            <p>Drafting, reviewing, and negotiating various business contracts and commercial agreements.</p>
+                        </div>
+                        <div class="expertise-item">
+                            <i class="fas fa-balance-scale"></i>
+                            <h4>Compliance & Governance</h4>
+                            <p>Ensuring your business meets all legal requirements and maintains proper corporate governance.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-section">
+                    <h3>How We Can Help Your Business</h3>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Initial Consultation</h4>
+                                <p>We'll discuss your business needs and legal requirements in detail.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Customized Legal Strategy</h4>
+                                <p>Develop a tailored legal approach to support your business objectives.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Ongoing Support</h4>
+                                <p>Provide continuous legal guidance as your business grows and evolves.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cta-box">
+                    <h3>Ready to Secure Your Business's Future?</h3>
+                    <p>Let's discuss how we can support your business's legal needs and help you achieve your goals.</p>
+                    <a href="../contact.html" class="btn">Contact Us Today</a>
+                </div>
+            </div>
+            
+            <!-- Intellectual Property Detail -->
+            <div id="intellectual-property" class="practice-area-detail">
+                <h2>Intellectual Property Protection</h2>
+                <p class="lead">Safeguard your innovations, brand identity, and creative works with our comprehensive intellectual property services. From registration to enforcement, we protect what makes your business unique.</p>
+                
+                <div class="service-features">
+                    <div class="feature">
+                        <i class="fas fa-trademark"></i>
+                        <h4>Trademark Registration</h4>
+                        <p>Secure your brand identity with trademark registration and protection services.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-copyright"></i>
+                        <h4>Copyright Protection</h4>
+                        <p>Protect your creative works, from literature to software and digital content.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-lightbulb"></i>
+                        <h4>Patent Services</h4>
+                        <p>Guidance through the patent application process to protect your inventions.</p>
+                    </div>
+                </div>
+                
+                <div class="document-grid">
+                    <div class="document-card">
+                        <i class="fas fa-file-signature"></i>
+                        <h5>IP Portfolio Management</h5>
+                        <ul>
+                            <li>Comprehensive IP audits</li>
+                            <li>Portfolio strategy development</li>
+                            <li>Renewal and maintenance</li>
+                            <li>Licensing agreements</li>
+                        </ul>
+                    </div>
+                    <div class="document-card">
+                        <i class="fas fa-gavel"></i>
+                        <h5>Enforcement & Litigation</h5>
+                        <ul>
+                            <li>Cease and desist notices</li>
+                            <li>IP infringement actions</li>
+                            <li>Defense against claims</li>
+                            <li>Alternative dispute resolution</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="cta-box">
+                    <h3>Protect Your Intellectual Property Today</h3>
+                    <p>Don't leave your valuable intellectual assets at risk. Contact us for expert IP protection services.</p>
+                    <a href="../contact.html" class="btn">Get Protected Now</a>
+                </div>
+            </div>
+            
+            <!-- Civil Litigation Detail -->
+            <div id="civil-litigation" class="practice-area-detail">
+                <h2>Civil Litigation Services</h2>
+                <p class="lead">When disputes arise, having an experienced litigator on your side can make all the difference. I provide aggressive representation in civil court matters, fighting to protect your rights and interests.</p>
+                
+                <div class="expertise-section">
+                    <h3>Areas of Civil Litigation</h3>
+                    <div class="expertise-grid">
+                        <div class="expertise-item">
+                            <i class="fas fa-balance-scale"></i>
+                            <h4>Contract Disputes</h4>
+                            <p>Resolving breaches of contract and business disputes through negotiation or litigation.</p>
+                        </div>
+                        <div class="expertise-item">
+                            <i class="fas fa-building"></i>
+                            <h4>Real Estate Litigation</h4>
+                            <p>Handling property disputes, boundary issues, and landlord-tenant conflicts.</p>
+                        </div>
+                        <div class="expertise-item">
+                            <i class="fas fa-user-injured"></i>
+                            <h4>Personal Injury Claims</h4>
+                            <p>Pursuing compensation for injuries caused by negligence or wrongdoing.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-section">
+                    <h3>Our Litigation Process</h3>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Case Evaluation</h4>
+                                <p>Thorough review of your case to determine the best legal strategy.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Evidence Gathering</h4>
+                                <p>Collecting and analyzing all relevant evidence to support your case.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Negotiation & Resolution</h4>
+                                <p>Pursuing favorable settlements through skilled negotiation.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Trial Representation</h4>
+                                <p>Aggressive courtroom advocacy when settlement isn't possible.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cta-box">
+                    <h3>Need Strong Legal Representation?</h3>
+                    <p>Don't face legal challenges alone. Contact us today to discuss your case with an experienced litigator.</p>
+                    <a href="../contact.html" class="btn">Schedule a Consultation</a>
+                </div>
+            </div>
+            
+            <!-- Criminal Law Detail -->
+            <div id="criminal-law" class="practice-area-detail">
+                <h2>Criminal Defense Services</h2>
+                <p class="lead">Facing criminal charges can be one of life's most challenging experiences. With a proven track record in criminal defense, I provide aggressive, strategic representation designed to protect your rights and secure the best possible outcome for your case.</p>
+                
+                <div class="expertise-section">
+                    <h3>Comprehensive Criminal Defense</h3>
+                    <div class="expertise-grid">
+                        <div class="expertise-item">
+                            <i class="fas fa-gavel"></i>
+                            <h4>Serious Felonies</h4>
+                            <p>Robust defense for serious criminal charges including assault, robbery, and violent crimes with a focus on protecting your future.</p>
+                        </div>
+                        <div class="expertise-item">
+                            <i class="fas fa-handcuffs"></i>
+                            <h4>Drug Offenses</h4>
+                            <p>Strategic defense for drug-related charges, from possession to trafficking, with a focus on minimizing consequences.</p>
+                        </div>
+                        <div class="expertise-item">
+                            <i class="fas fa-home"></i>
+                            <h4>Domestic Violence</h4>
+                            <p>Compassionate yet assertive representation in sensitive domestic violence cases, protecting both your rights and relationships.</p>
+                        </div>
+                        <div class="expertise-item">
+                            <i class="fas fa-building"></i>
+                            <h4>White Collar Crimes</h4>
+                            <p>Skilled defense for financial crimes, fraud, and corporate offenses with a focus on protecting your reputation and future.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-section">
+                    <h3>My Defense Strategy</h3>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Case Evaluation</h4>
+                                <p>Thorough review of charges, evidence, and circumstances to develop a strong defense strategy.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Evidence Analysis</h4>
+                                <p>Meticulous examination of all evidence, witness statements, and police reports for weaknesses.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Strategic Defense</h4>
+                                <p>Customized defense approach, from pre-trial motions to courtroom advocacy and plea negotiations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cta-box">
+                    <h3>Facing Criminal Charges?</h3>
+                    <p>Time is critical in criminal cases. Contact me immediately for a confidential consultation to discuss your legal options and start building your defense.</p>
+                    <a href="contact.html" class="btn btn-primary">Schedule Emergency Consultation</a>
+                </div>
+                
+            </div>
+            
+            <!-- Family Law Detail -->
+            <div id="family-law" class="practice-area-detail">
+                <h2>Family Law</h2>
+                <p>Family law matters can be emotionally challenging. I provide compassionate yet effective legal representation to help you navigate through difficult times with dignity and respect.</p>
+                
+                <h3>Services Include:</h3>
+                <ul>
+                    <li>Divorce & Legal Separation</li>
+                    <li>Child Custody & Visitation</li>
+                    <li>Child & Spousal Support</li>
+                    <li>Prenuptial & Postnuptial Agreements</li>
+                    <li>Domestic Violence Restraining Orders</li>
+                    <li>Adoption & Guardianship</li>
+                    <li>Paternity Actions</li>
+                    <li>Modification & Enforcement</li>
+                </ul>
+                
+                <p>I understand the sensitivity of family law matters and am committed to achieving resolutions that protect your interests and those of your loved ones.</p>
+                <a href="contact.html" class="btn btn-primary">Discuss Your Case</a>
+            </div>
+            
+            <!-- Notary Services Detail -->
+            <div id="notary-services" class="practice-area-detail">
+                <h2>Professional Notary Services</h2>
+                <p class="lead">Ensure your documents are legally valid and properly authenticated with our comprehensive notary public services. I provide prompt, reliable notarization for all your personal, business, and legal documentation needs.</p>
+                
+                <div class="service-highlights">
+                    <div class="highlight">
+                        <i class="fas fa-check-circle"></i>
+                        <h4>Certified Notary Public</h4>
+                        <p>Fully licensed and authorized to perform notarial acts in accordance with state regulations.</p>
+                    </div>
+                    <div class="highlight">
+                        <i class="fas fa-clock"></i>
+                        <h4>Same-Day Service</h4>
+                        <p>Quick and efficient notarization to meet your urgent document needs.</p>
+                    </div>
+                    <div class="highlight">
+                        <i class="fas fa-home"></i>
+                        <h4>Mobile Notary Available</h4>
+                        <p>Convenient notary services at your preferred location when needed.</p>
+                    </div>
+                </div>
+                
+                <div class="document-types">
+                    <h3>Common Documents We Notarize</h3>
+                    <div class="document-grid">
+                        <div class="document-card">
+                            <i class="fas fa-file-contract"></i>
+                            <h5>Legal Documents</h5>
+                            <ul>
+                                <li>Affidavits</li>
+                                <li>Power of Attorney</li>
+                                <li>Wills & Trusts</li>
+                            </ul>
+                        </div>
+                        <div class="document-card">
+                            <i class="fas fa-home"></i>
+                            <h5>Real Estate</h5>
+                            <ul>
+                                <li>Deeds</li>
+                                <li>Mortgage Documents</li>
+                                <li>Lease Agreements</li>
+                            </ul>
+                        </div>
+                        <div class="document-card">
+                            <i class="fas fa-briefcase"></i>
+                            <h5>Business Documents</h5>
+                            <ul>
+                                <li>Contracts</li>
+                                <li>Articles of Incorporation</li>
+                                <li>Business Agreements</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cta-box">
+                    <h3>Need a Document Notarized?</h3>
+                    <p>Ensure your documents are properly executed and legally binding. Contact us today to schedule your notary service appointment.</p>
+                    <a href="contact.html" class="btn btn-primary">Schedule Notary Service</a>
+                </div>
+                <a href="contact.html" class="btn btn-primary">Schedule Notary Service</a>
+            </div>
+            
+            <!-- Affidavit Services Detail -->
+            <div id="affidavit-services" class="practice-area-detail">
+                <h2>Professional Affidavit Services</h2>
+                <p class="lead">Ensure your sworn statements are legally sound and properly executed with our comprehensive affidavit services. From drafting to notarization, I provide end-to-end assistance for all your affidavit needs.</p>
+                
+                <div class="service-features">
+                    <div class="feature">
+                        <i class="fas fa-file-alt"></i>
+                        <h4>Custom Drafting</h4>
+                        <p>Professionally drafted affidavits tailored to your specific legal requirements and circumstances.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-search"></i>
+                        <h4>Legal Review</h4>
+                        <p>Thorough review of your existing affidavits to ensure legal compliance and effectiveness.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-stamp"></i>
+                        <h4>Notarization</h4>
+                        <p>Complete notarization services to validate your affidavit's authenticity and legal standing.</p>
+                    </div>
+                </div>
+                
+                <div class="affidavit-types">
+                    <h3>Common Types of Affidavits We Handle</h3>
+                    <div class="affidavit-grid">
+                        <div class="affidavit-card">
+                            <h4>Personal Affidavits</h4>
+                            <ul>
+                                <li>Name Change Affidavits</li>
+                                <li>Address Proof Affidavits</li>
+                                <li>Date of Birth Affidavits</li>
+                                <li>Marriage/Divorce Affidavits</li>
+                            </ul>
+                        </div>
+                        <div class="affidavit-card">
+                            <h4>Property Affidavits</h4>
+                            <ul>
+                                <li>Gift Deed Affidavits</li>
+                                <li>Property Ownership</li>
+                                <li>Joint Property Affidavits</li>
+                                <li>Succession Certificates</li>
+                            </ul>
+                        </div>
+                        <div class="affidavit-card">
+                            <h4>Financial Affidavits</h4>
+                            <ul>
+                                <li>Income Affidavits</li>
+                                <li>Financial Support</li>
+                                <li>Loan Affidavits</li>
+                                <li>Tax-related Affidavits</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cta-box">
+                    <h3>Need an Affidavit Prepared?</h3>
+                    <p>Ensure your legal documents are properly prepared and executed. Contact me today for professional affidavit services.</p>
+                    <a href="contact.html" class="btn btn-primary">Get Affidavit Assistance</a>
+                </div>
+            </div>
+            
+            <!-- Attestation Detail -->
+            <div id="attestation" class="practice-area-detail">
+                <h2>Document Attestation Services</h2>
+                <p class="lead">Navigate the complexities of document legalization with our professional attestation services. I ensure your documents are properly verified and accepted by government bodies, educational institutions, and foreign embassies worldwide.</p>
+                
+                <div class="attestation-process">
+                    <h3>Our Attestation Process</h3>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Document Review</h4>
+                                <p>Thorough examination of your documents to determine the appropriate attestation requirements.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Notarization</h4>
+                                <p>Official notarization of documents as the first step in the attestation process.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Government Authentication</h4>
+                                <p>Submission to relevant government departments for official verification and authentication.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Embassy Legalization</h4>
+                                <p>Final attestation by the respective embassy for international document use.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="document-categories">
+                    <h3>Documents We Can Help With</h3>
+                    <div class="category-grid">
+                        <div class="category-card">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h4>Educational Documents</h4>
+                            <ul>
+                                <li>Degree Certificates</li>
+                                <li>Diplomas</li>
+                                <li>Mark Sheets</li>
+                                <li>School Leaving Certificates</li>
+                            </ul>
+                        </div>
+                        <div class="category-card">
+                            <i class="fas fa-user"></i>
+                            <h4>Personal Documents</h4>
+                            <ul>
+                                <li>Birth Certificates</li>
+                                <li>Marriage Certificates</li>
+                                <li>Passport Copies</li>
+                                <li>PCC (Police Clearance Certificate)</li>
+                            </ul>
+                        </div>
+                        <div class="category-card">
+                            <i class="fas fa-briefcase"></i>
+                            <h4>Commercial Documents</h4>
+                            <ul>
+                                <li>Company Registration</li>
+                                <li>Power of Attorney</li>
+                                <li>Commercial Invoices</li>
+                                <li>Board Resolutions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cta-box">
+                    <h3>Need Document Attestation?</h3>
+                    <p>Ensure your documents are properly legalized for official use. Contact us today for reliable and efficient attestation services.</p>
+                    <a href="contact.html" class="btn btn-primary">Start Attestation Process</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Don't see your specific legal issue listed?</h2>
+                <p>I handle a wide range of legal matters. Contact me to discuss how I can assist with your unique situation.</p>
+                <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Adv. Amit Vishwakarma</h3>
+                    <p>Providing expert legal services with integrity and dedication to clients across various practice areas.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="practice-areas.html">Practice Areas</a></li>
+                        <li><a href="experience.html">Experience</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> A-303 Antariksh CHS LTD Kanakia Road opp. Kanakia Police Station,Beverly Park, Mira-road (East) Mira-Bhayandar, Maharashtra 401107</p>
+                    <p><i class="fas fa-phone"></i> 9326414897</p>
+                    <p><i class="fas fa-envelope"></i> advocateamitvishwakarma@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Advocate Amit Vishwakarma. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="disclaimer.html">Disclaimer</a> | 
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

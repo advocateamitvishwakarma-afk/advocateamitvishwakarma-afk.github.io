@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Advocate Amit Vishwakarma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Contact Page Specific Styles */
+        .contact-hero {
+            background: linear-gradient(rgba(10, 31, 68, 0.9), rgba(10, 31, 68, 0.9)), url('../img/contact-bg.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+        
+        .contact-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .contact-hero p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            margin-top: 50px;
+        }
+        
+        .contact-info {
+            padding: 30px;
+        }
+        
+        .contact-info h2 {
+            color: var(--navy-blue);
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .contact-info h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--gold);
+        }
+        
+        .contact-details {
+            margin-bottom: 40px;
+        }
+        
+        .contact-item {
+            display: flex;
+            margin-bottom: 25px;
+            align-items: flex-start;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(201, 162, 77, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: var(--gold);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-text h4 {
+            color: var(--navy-blue);
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-text p, 
+        .contact-text a {
+            color: var(--text-light);
+            margin: 0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-text a:hover {
+            color: var(--gold);
+        }
+        
+        .business-hours h3 {
+            color: var(--navy-blue);
+            margin-bottom: 20px;
+        }
+        
+        .hours-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .day {
+            font-weight: 600;
+            color: var(--navy-blue);
+        }
+        
+        .time {
+            color: var(--text-light);
+        }
+        
+        /* Contact Form Styles */
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--navy-blue);
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: var(--body-font);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: var(--gold);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--navy-blue);
+        }
+        
+        /* Map Section */
+        .map-section {
+            margin-top: 80px;
+        }
+        
+        .map-container {
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .contact-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .contact-form {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Adv. Amit Vishwakarma</h1>
+                <p>Bombay High Court</p>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="practice-areas.html">Practice Areas</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li class="active"><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Get In Touch</h1>
+            <p>Contact me today to schedule a consultation and discuss how I can assist with your legal needs.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="contact-container">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Office Address</h4>
+                                <p>A-303 Antariksh CHS LTD Kanakia Road <br> 
+                                    opp. Kanakia Police Station, <br>
+                                    Beverly Park, Mira-road (East)<br>Mira-Bhayandar, Maharashtra 401107<br>India</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p><a href="tel:+919326414897">+91 9326 414897</a> <a href="https://wa.me/919326414897" target="_blank" style="color: #25D366; margin-left: 5px;"><i class="fab fa-whatsapp"></i></a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p><a href="mailto:advocateamitvishwakarma@gmail.com">advocateamitvishwakarma@gmail.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="business-hours">
+                        <h3>Business Hours</h3>
+                        <ul class="hours-list">
+                            <li><span class="day">Monday - Friday</span> <span class="time">9:00 AM - 7:00 PM</span></li>
+                            <li><span class="day">Saturday</span> <span class="time">10:00 AM - 5:00 PM</span></li>
+                            <li><span class="day">Sunday</span> <span class="time">Closed</span></li>
+                            <li><span class="day">Emergency</span> <span class="time">24/7 Available</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="social-links" style="margin-top: 40px;">
+                        <h3>Follow Me</h3>
+                        <div style="display: flex; gap: 15px; margin-top: 15px;">
+                            <a href="#" style="color: var(--navy-blue); font-size: 1.5rem;" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" style="color: var(--navy-blue); font-size: 1.5rem;" title="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" style="color: var(--navy-blue); font-size: 1.5rem;" title="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="#" style="color: var(--navy-blue); font-size: 1.5rem;" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h2 style="color: var(--navy-blue); margin-bottom: 30px;">Send Me a Message</h2>
+                    <form id="contactForm" class="contact-form" action="https://formspree.io/f/advocateamitvishwakarma@gmail.com" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="practice-area">Practice Area</label>
+                            <select id="practice-area" name="practice-area" class="form-control">
+                                <option value="">Select a practice area</option>
+                                <option value="criminal">Criminal Law</option>
+                                <option value="family">Family Law</option>
+                                <option value="property">Property Law</option>
+                                <option value="corporate">Corporate Law</option>
+                                <option value="intellectual-property">Intellectual Property</option>
+                                <option value="civil-litigation">Civil Litigation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <div class="form-group" style="margin-top: 30px;">
+                            <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+                        </div>
+                        
+                        <p style="font-size: 0.9rem; color: #666; margin-top: 20px; line-height: 1.6;">
+                            By submitting this form, you agree to our <a href="privacy-policy.html" style="color: var(--gold);">Privacy Policy</a> and consent to being contacted by our team.
+                        </p>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Map Section -->
+            <div class="map-section">
+                <h2 style="text-align: center; margin-bottom: 30px; color: var(--navy-blue);">Find My Office</h2>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.2631859651544!2d72.8251235149008!3d19.05770498710021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9307b0810e3%3A0x2d2a5b5b5b5b5b5b5!2sMumbai%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" style="background-color: var(--navy-blue);">
+        <div class="container">
+            <div class="cta-content" style="color: white;">
+                <h2 style="color: white;">Need Immediate Legal Assistance?</h2>
+                <p style="opacity: 0.9;">For urgent matters, please call our 24/7 emergency line:</p>
+                <div style="font-size: 1.5rem; font-weight: 700; margin: 15px 0 25px;">
+                    <a href="tel:+919876543210" style="color: var(--gold); text-decoration: none;">+91 98765 43210</a>
+                </div>
+                <p style="opacity: 0.8; font-size: 0.9rem;">
+                    <i class="fas fa-exclamation-circle" style="margin-right: 8px;"></i>
+                    This line is for urgent matters only. For general inquiries, please use the contact form above.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Adv. Amit Vishwakarma</h3>
+                    <p>Providing expert legal services with integrity and dedication to clients across various practice areas.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="practice-areas.html">Practice Areas</a></li>
+                        <li><a href="experience.html">Experience</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Legal Street, Mumbai</p>
+                    <p><i class="fas fa-phone"></i> +91 12345 67890</p>
+                    <p><i class="fas fa-envelope"></i> contact@advocateamit.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Advocate Amit Vishwakarma. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="disclaimer.html">Disclaimer</a> | 
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
